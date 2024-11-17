@@ -38,6 +38,7 @@ Este proyecto tiene como objetivo la **gestión de libros y géneros** en una bi
   ```http
   GET /api/books
   ```
+  
 - **Respuesta exitosa** (`200`):  
   ```json
   [
@@ -52,6 +53,7 @@ Este proyecto tiene como objetivo la **gestión de libros y géneros** en una bi
     }
   ]
   ```
+  
 - **Error** (`500`):  
   ```json
   {
@@ -68,6 +70,7 @@ Este proyecto tiene como objetivo la **gestión de libros y géneros** en una bi
   ```http
   GET /api/books/7
   ```
+  
 - **Respuesta exitosa** (`200`):  
   ```json
   {
@@ -80,6 +83,7 @@ Este proyecto tiene como objetivo la **gestión de libros y géneros** en una bi
     "imagen_url": "https://beta-content.tap-commerce.com.ar/cover/original/9788498388909_1.jpg?id_com=1169"
   }
   ```
+  
 - **Error** (`404`):  
   ```json
   {
@@ -92,7 +96,8 @@ Este proyecto tiene como objetivo la **gestión de libros y géneros** en una bi
 #### **3. Crear un libro**  
 - **Endpoint**: `POST /api/books`  
 - **Descripción**: Crea un nuevo libro con los datos proporcionados.  
-- **Cuerpo de la solicitud**:  
+- **Cuerpo de la solicitud**:
+  
   ```json
   {
     "titulo": "Fahrenheit 451",
@@ -103,6 +108,7 @@ Este proyecto tiene como objetivo la **gestión de libros y géneros** en una bi
     "imagen_url": "https://example.com/fahrenheit.jpg"
   }
   ```
+  
 - **Respuesta exitosa** (`201`):  
   ```json
   {
@@ -116,6 +122,7 @@ Este proyecto tiene como objetivo la **gestión de libros y géneros** en una bi
     "error": "Faltan datos requeridos"
   }
   ```
+  
     > **Nota**: El campo `id` se genera automáticamente y no debe incluirse en el JSON.
 
 ---
@@ -123,19 +130,24 @@ Este proyecto tiene como objetivo la **gestión de libros y géneros** en una bi
 #### **4. Actualizar un libro**  
 - **Endpoint**: `PUT /api/books/:ID`  
 - **Descripción**: Modifica un libro existente identificado por el `ID`.  
-- **Cuerpo de la solicitud**:  
+- **Cuerpo de la solicitud**:
+  
   ```json
   {
     "titulo": "Fahrenheit 451 (Edición Actualizada)"
   }
   ```
-- **Respuesta exitosa** (`200`):  
+  
+- **Respuesta exitosa** (`200`):
+  
   ```json
   {
     "message": "Libro actualizado con éxito"
   }
   ```
-- **Errores** (`404`):  
+  
+- **Errores** (`404`):
+  
   ```json
   {
     "error": "No existe el libro con el id=3"
@@ -147,17 +159,22 @@ Este proyecto tiene como objetivo la **gestión de libros y géneros** en una bi
 #### **5. Eliminar un libro**  
 - **Endpoint**: `DELETE /api/books/:ID`  
 - **Descripción**: Elimina el libro identificado por el `ID`.  
-- **Ejemplo de solicitud**:  
+- **Ejemplo de solicitud**:
+  
   ```http
   DELETE /api/books/2
   ```
-- **Respuesta exitosa** (`200`):  
+  
+- **Respuesta exitosa** (`200`):
+  
   ```json
   {
     "message": "Libro eliminado con éxito"
   }
   ```
-- **Errores** (`404`):  
+  
+- **Errores** (`404`):
+  
   ```json
   {
     "error": "No existe el libro con el id=2"
@@ -175,7 +192,8 @@ Este proyecto tiene como objetivo la **gestión de libros y géneros** en una bi
   ```http
   GET /api/genres
   ```
-- **Respuesta exitosa** (`200`):  
+- **Respuesta exitosa** (`200`):
+  
   ```json
   [
     {
@@ -194,7 +212,9 @@ Este proyecto tiene como objetivo la **gestión de libros y géneros** en una bi
     }
   ]
   ```
-- **Error** (`500`):  
+  
+- **Error** (`500`):
+  
   ```json
   {
     "error": "Error al obtener los géneros"
@@ -206,11 +226,14 @@ Este proyecto tiene como objetivo la **gestión de libros y géneros** en una bi
 #### **2. Obtener un género por ID**  
 - **Endpoint**: `GET /api/genres/:ID`  
 - **Descripción**: Devuelve los detalles del género correspondiente al `ID` especificado.  
-- **Ejemplo de solicitud**:  
+- **Ejemplo de solicitud**:
+  
   ```http
   GET /api/genres/1
   ```
-- **Respuesta exitosa** (`200`):  
+  
+- **Respuesta exitosa** (`200`):
+  
   ```json
   {
       "id": 1,
@@ -220,7 +243,9 @@ Este proyecto tiene como objetivo la **gestión de libros y géneros** en una bi
       "nivel_popularidad": 8
     }
   ```
-- **Error** (`404`):  
+  
+- **Error** (`404`):
+  
   ```json
   {
     "error": "No existe el género con el id=1"
@@ -232,7 +257,8 @@ Este proyecto tiene como objetivo la **gestión de libros y géneros** en una bi
 #### **3. Crear un género**  
 - **Endpoint**: `POST /api/genres`  
 - **Descripción**: Crea un nuevo género con los datos proporcionados.  
-- **Cuerpo de la solicitud**:  
+- **Cuerpo de la solicitud**:
+  
   ```json
   {
       "genero": "Neofantástico",
@@ -240,20 +266,25 @@ Este proyecto tiene como objetivo la **gestión de libros y géneros** en una bi
       "generos_relacionados": "Ciencia, Filosofia.",
       "nivel_popularidad": 2
     }
+  
   ```
-- **Respuesta exitosa** (`201`):  
+- **Respuesta exitosa** (`201`):
+  
   ```json
   {
     "message": "Género creado con éxito",
     "id": 3
   }
   ```
-- **Errores** (`400`):  
+  
+- **Errores** (`400`):
+  
   ```json
   {
     "error": "Faltan datos requeridos"
   }
   ```
+  
   > **Nota**: El campo `id` se genera automáticamente y no debe incluirse en el JSON.
 
 ---
@@ -261,19 +292,24 @@ Este proyecto tiene como objetivo la **gestión de libros y géneros** en una bi
 #### **4. Actualizar un género**  
 - **Endpoint**: `PUT /api/genres/:ID`  
 - **Descripción**: Modifica un género existente identificado por el `ID`.  
-- **Cuerpo de la solicitud**:  
+- **Cuerpo de la solicitud**:
+   
   ```json
   {
     "genero": "Aventura y Fantasía"
   }
   ```
-- **Respuesta exitosa** (`200`):  
+  
+- **Respuesta exitosa** (`200`):
+  
   ```json
   {
     "message": "Género actualizado con éxito"
   }
   ```
-- **Errores** (`404`):  
+  
+- **Errores** (`404`):
+  
   ```json
   {
     "error": "No existe el género con el id=3"
@@ -285,16 +321,20 @@ Este proyecto tiene como objetivo la **gestión de libros y géneros** en una bi
 #### **5. Eliminar un género**  
 - **Endpoint**: `DELETE /api/genres/:ID`  
 - **Descripción**: Elimina el género identificado por el `ID`.  
-- **Ejemplo de solicitud**:  
+- **Ejemplo de solicitud**:
+  
   ```http
   DELETE /api/genres/2
   ```
-- **Respuesta exitosa** (`200`):  
+  
+- **Respuesta exitosa** (`200`):
+  
   ```json
   {
     "message": "Género eliminado con éxito"
   }
   ```
+  
 - **Errores** (`404`):  
   ```json
   {
