@@ -346,6 +346,6 @@ Este proyecto tiene como objetivo la **gestión de libros y géneros** en una bi
 
 ### 🌐 Estructura del Proyecto
 
-Este proyecto cuenta con una API REST que permite la consulta, modificación, eliminación e inserción de **libros** y **géneros** en una biblioteca. El diseño está orientado a facilitar la **gestión de la colección literaria** y la **organización de géneros**.
+Este proyecto implementa una API REST que ofrece funcionalidades completas para la gestión de una biblioteca, incluyendo la consulta, inserción, modificación y eliminación de libros y géneros. El diseño está enfocado en simplificar la organización y el acceso a la colección literaria, permitiendo una administración eficiente y estructurada de los recursos disponibles.
 
 ---
